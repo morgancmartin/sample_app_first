@@ -67,14 +67,17 @@ Rails.application.configure do
   host = '<your heroku app>.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
-    :address        => 'smtp.sendgrid.net',
+    :address        => 'smtp.gmail.com',
     :port           => '587',
     :authentication => :plain,
-    :user_name      => ENV['SENDGRID_USERNAME'],
-    :password       => ENV['SENDGRID_PASSWORD'],
+    :user_name      => ENV['GMAIL_USERNAME'],
+    :password       => ENV['GMAIL_PASSWORD'],
     :domain         => 'heroku.com',
     :enable_starttls_auto => true
   }
+
+  # specify what domain to use for mailer URLs
+  config.action_mailer.default_url_options = {host: "mighty-plateau-9589.herokuapp.com"}
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
