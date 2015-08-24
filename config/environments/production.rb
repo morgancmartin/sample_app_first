@@ -74,10 +74,10 @@ Rails.application.configure do
     :password       => ENV['SENDGRID_PASSWORD'],
     :domain         => 'heroku.com',
     :enable_starttls_auto => true
+  }
 
     # specify what domain to use for mailer URLs
   config.action_mailer.default_url_options = {host: "https://mighty-plateau-9589.herokuapp.com/"}
-  }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
